@@ -9,6 +9,9 @@ class nxosdemo::vxlan (
     # String $vlan_vni         = '5510102',
     # String $vlan_mcast_group = '239.96.240.102',
   ) {
+    # Purely for demo purposes, line would be higher in stack
+    require ciscopuppet::install
+
     cisco_vlan { '10' :
       ensure     => present,
       mapped_vni => '5510010',
@@ -51,7 +54,7 @@ class nxosdemo::vxlan (
       state      => 'active',
       shutdown   => false,
     }
-    
+
     cisco_vxlan_vtep_vni { 'nve1 5510102' :
       ensure          => present,
       assoc_vrf       => false,
