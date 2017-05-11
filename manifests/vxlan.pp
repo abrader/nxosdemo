@@ -20,6 +20,12 @@ class nxosdemo::vxlan (
       shutdown   => false,
     }
 
+    cisco_vrf { 'prod' :
+      ensure              => present,
+      description         => 'VXLAN VRF prod',
+      route_distinguisher => 'auto',
+    }
+
     cisco_interface { 'Vlan10' :
       ensure          => present,
       interface       => 'Vlan10',
