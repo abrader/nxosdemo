@@ -1,14 +1,6 @@
 # Demo class for representing EVPN examples
 
-class nxosdemo::vxlan (
-    # String $l3vni_vni_id     = '5510010',
-    # String $l3vni_vlan_id    = '10',
-    # String $vxlan_vrf        = 'prod',
-    # String $vlan_name        = 'EVPN_VNI_Test',
-    # String $vlan_id          = '102',
-    # String $vlan_vni         = '5510102',
-    # String $vlan_mcast_group = '239.96.240.102',
-  ) {
+class nxosdemo::vxlan {
     # Purely for demo purposes, line would be higher in stack
     require ciscopuppet::install
 
